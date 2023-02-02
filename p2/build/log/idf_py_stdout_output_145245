@@ -1,0 +1,26 @@
+[1/10] Performing build step for 'bootloader'
+[1/1] cd /home/training/Desktop/Harshitha_08_RTOS/p2/build/bootloader/esp-idf/esptool_py && /home/training/.espressif/python_env/idf5.1_py3.8_env/bin/python /home/training/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x1000 /home/training/Desktop/Harshitha_08_RTOS/p2/build/bootloader/bootloader.bin
+Bootloader binary size 0x6720 bytes. 0x8e0 bytes (8%) free.
+[2/8] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/p2.c.obj
+../main/p2.c: In function 'app_main':
+../main/p2.c:48:43: warning: passing argument 6 of 'xTaskCreate' from incompatible pointer type [-Wincompatible-pointer-types]
+   48 |     xTaskCreate(task3,"task3",2048,NULL,7,&task3_timer_handle);
+      |                                           ^~~~~~~~~~~~~~~~~~~
+      |                                           |
+      |                                           struct tmrTimerControl **
+In file included from ../main/p2.c:3:
+/home/training/esp/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/task.h:593:50: note: expected 'struct tskTaskControlBlock ** const' but argument is of type 'struct tmrTimerControl **'
+  593 |                             TaskHandle_t * const pxCreatedTask ) PRIVILEGED_FUNCTION
+      |                             ~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+[3/8] Linking C static library esp-idf/main/libmain.a
+[4/8] Generating ld/sections.ld
+[5/8] Building C object CMakeFiles/p2.elf.dir/project_elf_src_esp32.c.obj
+[6/8] Linking CXX executable p2.elf
+[7/8] Generating binary image from built executable
+esptool.py v4.5.dev2
+Creating esp32 image...
+Merged 2 ELF sections
+Successfully created esp32 image.
+Generated /home/training/Desktop/Harshitha_08_RTOS/p2/build/p2.bin
+[8/8] cd /home/training/Desktop/Harshitha_08_RTOS/p2/build/esp-idf/esptool_py && /home/training/.espressif/python_env/idf5.1_py3.8_env/bin/python /home/training/esp/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app /home/training/Desktop/Harshitha_08_RTOS/p2/build/partition_table/partition-table.bin /home/training/Desktop/Harshitha_08_RTOS/p2/build/p2.bin
+p2.bin binary size 0x28cb0 bytes. Smallest app partition is 0x100000 bytes. 0xd7350 bytes (84%) free.
